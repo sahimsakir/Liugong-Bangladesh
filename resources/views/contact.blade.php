@@ -83,14 +83,9 @@
             </div>
           </div>
           <div class="col-md-8">
-<!-- How to change your own map point
-	1. Go to Google Maps
-	2. Click on your location point
-	3. Click "Share" and choose "Embed map" tab
-	4. Copy only URL and paste it within the src="" field below
--->
+
             <div id="map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.2676025103146!2d90.41774501462545!3d23.809081392449805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7ca72b85ab7%3A0xd70c7b0f2e95f67f!2sBANGLAMARK%20GROUP!5e0!3m2!1sen!2sbd!4v1631513542451!5m2!1sen!2sbd" width="100%" height="330px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <iframe <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d327.33425125667776!2d90.41978706326047!3d23.808997800159087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7da146e87e3%3A0x351ede4aa2fb7368!2sLiuGong%20Bangladesh!5e0!3m2!1sen!2sbd!4v1632567957352!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
           <div class="col-md-4">
@@ -111,53 +106,6 @@
         </div>
       </div>
     </div>
-
-    
-    <!--<div class="send-message">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Send us a Message</h2>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="contact-form">
-              <form id="contact" role="form" action="email-script.php" method="post">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <input type="hidden" class="form-control"  name="toEmail" value="sales@liugongbangladesh.com">
-                    <fieldset>
-                      <input type="text" class="form-control" placeholder="Enter full name" name="name" required >
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input type="email" class="form-control" placeholder="Enter email address" name="email" required>
-                    </fieldset>
-                  </div>-->
-                  <!--<div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
-                    </fieldset>
-                  </div>-->
-                  <!--<div class="col-lg-12">
-                    <fieldset>
-                      <textarea class="form-control" rows="6" placeholder="Tell us about your message" name="message" required></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" name="sendMailBtn" class="filled-button">Send Message</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
 
 
     <div class="happy-clients">
@@ -218,11 +166,11 @@
 
 
     <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
+      cleared[0] = cleared[1] = cleared[2] = 0; 
+      function clearField(t){                  
+      if(! cleared[t.id]){                      
+          cleared[t.id] = 1;  
+          t.value='';        
           t.style.color='#fff';
           }
       }

@@ -597,6 +597,14 @@ header .navbar {
     max-width: 100%;
     height: auto;
 }
+.catalog{
+	text-align: center;
+}
+.btn-primary{
+	background-color: #07468b;
+	padding: 5px 15px;
+	border-radius: 25px;
+}
 /* Social Links */
 .social-links{
 	margin-bottom: 30px;

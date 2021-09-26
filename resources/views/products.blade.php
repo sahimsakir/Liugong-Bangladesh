@@ -74,33 +74,9 @@
             <div class="filters">
               <ul>
                   <li class="active" data-filter="*">All Products</li>
-                  <li data-filter=".excavator">Excavator</li>
-                  <li data-filter=".wheel-loader">Wheel Loader</li>
-                  <li data-filter=".dozer">Dozer</li>
-                  <li data-filter=".motor-grader">Motor Grader</li>
-                  <li data-filter=".soil-compactor">Soil Compactor</li>
-                  <li data-filter=".tandem-roller">Tandem Roller</li>
-                  <li data-filter=".mini-roller">Mini Roller</li>
-                  <li data-filter=".asphalt-paver-machine">Asphalt Paver Machine</li>
-                  <li data-filter=".skid-steer-loader">Skid Steer Loader</li>
-                  <li data-filter=".backhoe-loader">Backhoe Loader</li>
-                  <li data-filter=".truck-crane">Truck Crane</li>
-                  <li data-filter=".fforklift">Forklift</li>
-                  <li data-filter=".scissor-lift">Scissor Lift</li>
-                  <li data-filter=".concrete-batching-plant">Concrete Batching Plant</li>
-                  <li data-filter=".asphalt-batching-plant">Asphalt Batching Plant</li>
-                  <li data-filter=".concrete-trailer-pump">Concrete Trailer Pump</li>
-                  <li data-filter=".concrete-boom-pump">Concrete Boom Pump</li>
-                  <li data-filter=".drilling-rig">Drilling Rig</li>
-                  <li data-filter=".cold-planer">Cold Planer</li>
-                  <li data-filter=".crushing-screening">Crushing & Screening</li>
-                  <li data-filter=".mining-truck">Mining Truck</li>
-                  <li data-filter=".motor-grader">Concrete Mixer Machine</li>
-                  <li data-filter=".transit-mixer-truck">Transit Mixer Truck</li>
-                  <li data-filter=".material-handler">Material Handler</li>
-                  <li data-filter=".special-attachments">Special Attachments</li>
-                  <li data-filter=".sugarcane-harvester">Sugarcane Harvester</li>
-                  <li data-filter=".tractor">Tractor</li>
+                  @foreach ($category as $i)
+                  <li data-filter=".{{$i->category_class}}">{{$i->category_name}}</li>
+                  @endforeach
               </ul>
             </div>
           </div>
@@ -109,12 +85,12 @@
                 <div class="row grid">
                     <div class="col-lg-4 col-md-4 all excavator">
                       <div class="product-item">
-                        <a href="#" href="#" data-toggle="modal" data-target="#noAnimModal0101"><img src="assets/images/product/excavator-001.jpg" alt=""></a>
+                        <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><img src="assets/images/product/excavator-001.jpg" alt=""></a>
                         <div class="down-content">
-                          <a href="#"><h4>925E EXCAVATOR LONG REACH ARM</h4></a>
+                          <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><h4>925E EXCAVATOR LONG REACH ARM</h4></a>
                           <p>Engine: Cummins 6BTAA5.9-C178-II</p>
-                          <p>Gross Power: 133 kW ( 178 hp / 181 ps)</p>
-                          <p>Net Power: 125 kW ( 168 hp / 170 ps)</p>
+                          <p>Standard Bucket Capacity: 0.4 m3</p>
+                          <p>Operating Weight: 28,000 kg</p>
                         </div>
                       </div>
                     </div>
@@ -144,7 +120,7 @@
                                             </div>
                                 
                                             <p class="text-justify">
-                                                925E EXCAVATOR LONG REACH ARM rolls the soil like a tiger.
+                                                text here
                                             </p>
                                         </div>
                                     </div>
@@ -163,42 +139,53 @@
                                                 <thead>
                                                 <tr>
                                                     <th>Model</th>
-                                                    <th>Massey Ferguson MF240</th>
+                                                    <th>925E EXCAVATOR LONG REACH ARM</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <td>Horse Power</td>
-                                                    <td>40 hp</td>
+                                                    <td>Emission Regulation</td>
+                                                    <td>Tier 2 / Stage II</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Cylinder</td>
-                                                    <td>03</td>
+                                                    <td>Manufacturer</td>
+                                                    <td>Cummins</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Fuel Pump</td>
-                                                    <td>Rotary</td>
+                                                    <td>Model</td>
+                                                    <td>6BTAA5.9-C178-II</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Capacity</td>
-                                                    <td>2.5 L. (2500 cc)</td>
+                                                    <td>Gross Power</td>
+                                                    <td>133 kW ( 178 hp / 181 ps) @ 2,000 rpm</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Steering</td>
-                                                    <td>Manual</td>
+                                                    <td>Net Power</td>
+                                                    <td>125 kW ( 168 hp / 170 ps) @ 2,000 rpm</td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Tire</td>
-                                                    <td>Front 6.00 -16 & Rear 13.6 - 28</td>
+                                                    <td>Peak Torque</td>
+                                                    <td>708 N·m @ 1,500 rpm</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Number of Cylinders</td>
+                                                    <td>6</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Displacement</td>
+                                                    <td>5.9 L</td>
                                                 </tr>
                                                 
                                                 </tbody>
                                             </table>
+                                            <div class="catalog">
+                                            <a href="assets/pdf/Excavator-925ELongArm.pdf" class="filled-button">Download Catalog</a>
+                                            </div>
                                     </div>
                                 </div>
                         </div>
                         <div class="modal-footer">
-                      <a href="contact.php" class="btn btn-primary btn-sm">Inquiry</a>
+                      <a href="contact.php" class="btn btn-primary btn-sm">Get in Touch</a>
                       <a type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</a>
                     </div>
                       </div>
