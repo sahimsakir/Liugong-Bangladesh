@@ -34,3 +34,4 @@ Route::get('/career', function () {
 
 Route::get('/', [HomeController::class,'index']);
 Route::get('/products', [ProductController::class,'products']);
+Route::get('/products/{id}', [HomeController::class, 'product_by_category']);

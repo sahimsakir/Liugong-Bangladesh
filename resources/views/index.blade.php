@@ -86,7 +86,7 @@
             <div class="caption">
                 <h2>TOUGH <em>WORLD</em>. TOUGH <em>EQUIPMENT</em>.</h2>
                 <div class="main-button scroll-to-section">
-                    <a href="#" class="filled-button">See More</a>
+                    <a href="/about" class="filled-button">See More</a>
                 </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
           @foreach ($category as $i)
           <div class="col-md-2">
             <div class="product-item">
-              <a href="/products?{{$i->category_name}}"><img src="{{$i->category_image}}" alt=""></a>
+              <a href="/products/{{$i->category_class}}"><img src="{{$i->category_image}}" alt=""></a>
             </div>
               <div class="down-content">
                 <a href="#"><h4>{{$i->category_name}}</h4></a>                
