@@ -11,7 +11,15 @@
 
     <title>Home | Liugong Bangladesh</title>
 
-    @extends('include-header-css')
+    <link rel="shortcut icon" href="assets/images/liugong-logo-title.png" type="image/png">
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
       
 
   </head>
@@ -20,7 +28,13 @@
 
     <!-- ***** Preloader Start ***** -->
      
-    @extends('include-preloader')
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</div>
       
 
     <!-- ***** Preloader End ***** -->
@@ -93,7 +107,7 @@
           @foreach ($category as $i)
           <div class="col-md-2">
             <div class="product-item">
-              <a href="#"><img src="{{$i->category_image}}" alt=""></a>
+              <a href="/products?{{$i->category_name}}"><img src="{{$i->category_image}}" alt=""></a>
             </div>
               <div class="down-content">
                 <a href="#"><h4>{{$i->category_name}}</h4></a>                

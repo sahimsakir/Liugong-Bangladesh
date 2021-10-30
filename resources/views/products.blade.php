@@ -11,7 +11,14 @@
 
     <title>Our Products | Liugong Bangladesh</title>
 
-    @extends('include-header-css')
+    <link rel="shortcut icon" href="assets/images/liugong-logo-title.png" type="image/png">
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
       
 
   </head>
@@ -20,7 +27,13 @@
 
     <!-- ***** Preloader Start ***** -->
 
-    @extends('include-preloader')
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</div>
       
     
     <!-- ***** Preloader End ***** -->
@@ -83,17 +96,18 @@
           <div class="col-md-12">
             <div class="filters-content">
                 <div class="row grid">
-                    <div class="col-lg-4 col-md-4 all excavator">
+                  @foreach($product as $i)
+                    <div class="col-lg-4 col-md-4 all {{$i->product_class}}">
                       <div class="product-item">
-                        <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><img src="assets/images/product/excavator-001.jpg" alt=""></a>
+                        <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><img src="{{$i->product_image}}" alt=""></a>
                         <div class="down-content">
-                          <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><h4>925E EXCAVATOR LONG REACH ARM</h4></a>
-                          <p>Engine: Cummins 6BTAA5.9-C178-II</p>
-                          <p>Standard Bucket Capacity: 0.4 m3</p>
-                          <p>Operating Weight: 28,000 kg</p>
+                          <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><h4>{{$i->product_name}}</h4></a>
+                          <p>{{$i->product_short_intro}}</p>
+                          
                         </div>
                       </div>
                     </div>
+                    @endforeach
 
 
                     <div class="modal fade" id="noAnimModal0101" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
