@@ -11,7 +11,14 @@
 
     <title>About Us | Liugong Bangladesh</title>
 
-    @extends('include-header-css')
+    <link rel="shortcut icon" href="assets/images/liugong-logo-title.png" type="image/png">
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
       
 
   </head>
@@ -20,7 +27,13 @@
 
     <!-- ***** Preloader Start ***** -->
 
-    @extends('include-preloader')
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</div>
       
     
     <!-- ***** Preloader End ***** -->
@@ -61,7 +74,10 @@
     <!-- ***** Nav Bar End ***** -->
 
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text">
+    <div class="page-heading header-text">
+      <div class="heading-banner">
+        <img src="{{asset('assets/images/banner/about-banner.jpg')}}" alt="">
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-12">

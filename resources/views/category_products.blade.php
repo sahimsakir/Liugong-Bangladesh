@@ -7,19 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="{{asset('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap')}}" rel="stylesheet">
 
-    <title>Our Products | Liugong Bangladesh</title>
+    <title>@foreach ($category as $i)
+            {{$i->category_meta_title}}
+            @endforeach</title>
 
-    <link rel="shortcut icon" href="assets/images/liugong-logo-title.png" type="image/png">
+    <link rel="shortcut icon" href="{{asset('assets/images/liugong-logo-title.png')}}" type="image/png">
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('https://use.fontawesome.com/releases/v5.4.1/css/all.css')}}">
 
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-      
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.css')}}">
 
   </head>
 
@@ -33,8 +34,7 @@
             <div></div>
             <div></div>
         </div>
-</div>
-      
+    </div>
     
     <!-- ***** Preloader End ***** -->
     
@@ -43,7 +43,7 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="/"><img src="assets/images/liugong-logo.png"></a>
+          <a class="navbar-brand" href="/"><img src="{{asset('assets/images/liugong-logo.png')}}"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -76,11 +76,15 @@
     <!-- Page Content -->
     <div class="page-heading header-text">
     <div class="heading-banner">
-        <img src="{{asset('assets/images/banner/products-banner.jpg')}}" alt="">
+            @foreach ($category as $i)
+            <img src="{{asset($i->category_banner)}}" alt="">
+            @endforeach
+        
       </div>
       <div class="container">
       </div>
     </div>
+
 
     
     <div class="products">
@@ -88,21 +92,18 @@
         <div class="row">
           <div class="col-md-12">
             <div class="filters">
-              <ul>
-                  <li class="active" data-filter="*">All Products</li>
-                  @foreach ($category as $i)
-                  <li data-filter=".{{$i->category_class}}">{{$i->category_name}}</li>
-                  @endforeach
-              </ul>
+            @foreach ($category as $i)
+              <h2>{{$i->category_name}}</h2>
+            @endforeach
             </div>
           </div>
           <div class="col-md-12">
             <div class="filters-content">
                 <div class="row grid">
-                  @foreach($product as $i)
+                @foreach($product as $i)
                     <div class="col-lg-4 col-md-4 all {{$i->product_class}}">
                       <div class="product-item">
-                        <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><img src="{{$i->product_image}}" alt=""></a>
+                        <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><img src="{{asset($i->product_image)}}" alt=""></a>
                         <div class="down-content">
                           <a href="#" data-toggle="modal" data-target="#noAnimModal0101"><h4>{{$i->product_name}}</h4></a>
                           <p>{!!$i->product_short_intro!!}</p>
@@ -120,7 +121,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                             <div>
-                                                <img alt="" class="img-fluid" src="{{$i->product_image}}" />
+                                                <img alt="" class="img-fluid" src="{{asset($i->product_image)}}" />
                                             </div>
                                      </div>
                                 
@@ -149,7 +150,7 @@
                                             <h4>Parameters</h4>
                                             {!!$i->product_parameters!!}
                                             <div class="catalog">
-                                            <a href="{{$i->product_catalog}}" class="filled-button">Download Catalog</a>
+                                            <a href="{{asset($i->product_catalog)}}" class="filled-button">Download Catalog</a>
                                             </div>
                                     </div>
                                 </div>
@@ -163,7 +164,8 @@
                     </div>
                     <!-- /.modal-dialog -->
                   </div>
-                  @endforeach
+                  @endforeach 
+
 
                 </div>
             </div>
@@ -174,20 +176,19 @@
 
     
     @extends('include-footer')
-     
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
 
     <!-- Additional Scripts -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/owl.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/accordions.js"></script>
+    <script src="{{asset('assets/js/custom.js')}}"></script>
+    <script src="{{asset('assets/js/owl.js')}}"></script>
+    <script src="{{asset('assets/js/slick.js')}}"></script>
+    <script src="{{asset('assets/js/isotope.js')}}"></script>
+    <script src="{{asset('assets/js/accordions.js')}}"></script>
 
 
     <script language = "text/Javascript"> 

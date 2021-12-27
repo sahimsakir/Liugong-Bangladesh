@@ -11,7 +11,14 @@
 
     <title>Career | Liugong Bangladesh</title>
 
-    @extends('include-header-css')
+    <link rel="shortcut icon" href="assets/images/liugong-logo-title.png" type="image/png">
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
       
 
   </head>
@@ -20,7 +27,13 @@
 
     <!-- ***** Preloader Start ***** -->
 
-    @extends('include-preloader')
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+</div>
       
     
     <!-- ***** Preloader End ***** -->
@@ -30,27 +43,27 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.php"><img src="assets/images/liugong-logo.png"></a>
+          <a class="navbar-brand" href="/"><img src="assets/images/liugong-logo.png"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
+                <a class="nav-link" href="/">Home</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="products.php">Our Products</a>
+                <a class="nav-link" href="/products">Our Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.php">About Us</a>
+                <a class="nav-link" href="/about">About Us</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="career.php">Career
+                <a class="nav-link" href="/career">Career
                 <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contact Us</a>
+                <a class="nav-link" href="/contact">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -61,7 +74,10 @@
     <!-- ***** Nav Bar End ***** -->
 
     <!-- Page Content -->
-    <div class="page-heading career-heading header-text">
+    <div class="page-heading header-text">
+    <div class="heading-banner">
+        <img src="{{asset('assets/images/banner/career-banner.jpg')}}" alt="">
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
