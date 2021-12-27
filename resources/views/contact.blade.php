@@ -74,7 +74,10 @@
     <!-- ***** Nav Bar End ***** -->
 
     <!-- Page Content -->
-    <div class="page-heading contact-heading header-text">
+    <div class="page-heading header-text">
+    <div class="heading-banner">
+        <img src="{{asset('assets/images/banner/contact-us-banner.jpg')}}" alt="">
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -98,7 +101,7 @@
           <div class="col-md-8">
 
             <div id="map">
-              <iframe <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d327.33425125667776!2d90.41978706326047!3d23.808997800159087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7da146e87e3%3A0x351ede4aa2fb7368!2sLiuGong%20Bangladesh!5e0!3m2!1sen!2sbd!4v1632567957352!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <iframe <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d327.33425125667776!2d90.41978706326047!3d23.808997800159087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7da146e87e3%3A0x351ede4aa2fb7368!2sLiuGong%20Bangladesh!5e0!3m2!1sen!2sbd!4v1632567957352!5m2!1sen!2sbd" width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
           <div class="col-md-4">

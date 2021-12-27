@@ -17,9 +17,10 @@ class HomeController extends Controller
     }
     function product_by_category($id)
     {
-        $data = Category::where('category_class','=',$id)->get();
-        $product = Product::all();
-        return view ('category_products',['category'=>$data,'product'=>$product]);
+        $data = Category::where('category_class',$id)->first();
+        $category = Category::where('category_class',$id)->get();
+        $product = Product::where('category_id',$data->category_id)->get();
+        return view ('category_products',compact('category','product'));
         
     }
 }

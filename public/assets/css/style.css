@@ -88,27 +88,15 @@ a.filled-button:hover {
 	margin-bottom: 15px;
 }
 
-.products-heading {
-	background-image: url(../images/banner/products-banner.jpg);
-	height: 500px;
+
+
+.heading-banner img {
+	width: 100%;
 }
 
-.about-heading {
-	background-image: url(../images/banner/about-banner.jpg);
-	height: 500px;
-}
-.career-heading {
-	background-image: url(../images/banner/career-banner.jpg);
-	height: 500px;
-}
-
-.contact-heading {
-	background-image: url(../images/banner/contact-us-banner.jpg);
-	height: 500px;
-}
 
 .page-heading {
-	padding: 210px 0px 130px 0px;
+	padding-top: 80px;
 	text-align: center;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -317,10 +305,8 @@ header .navbar {
 }
 /* Video and Caption */
 #bg-video {
-    min-width: 100%;
-    min-height: 100vh;
-    max-width: 100%;
-    max-height: 100vh;
+    width: 100%;
+    height: 500px;
     object-fit: cover;
     z-index: -1;
 }

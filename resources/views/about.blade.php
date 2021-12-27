@@ -74,7 +74,10 @@
     <!-- ***** Nav Bar End ***** -->
 
     <!-- Page Content -->
-    <div class="page-heading about-heading header-text">
+    <div class="page-heading header-text">
+      <div class="heading-banner">
+        <img src="{{asset('assets/images/banner/about-banner.jpg')}}" alt="">
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
