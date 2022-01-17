@@ -12,15 +12,15 @@ class HomeController extends Controller
     function index()
     {
         $data = Category::all();
-        return view ('index',['category'=>$data]);
+        return view ('site.index',['category'=>$data]);
         
     }
     function product_by_category($id)
     {
         $data = Category::where('category_class',$id)->first();
         $category = Category::where('category_class',$id)->get();
-        $product = Product::where('category_id',$data->category_id)->get();
-        return view ('category_products',compact('category','product'));
+        $product = Product::where('category_id',$data->id)->orderBy('id', 'ASC')->get();
+        return view ('site.category_products',compact('category','product'));
         
     }
 }
