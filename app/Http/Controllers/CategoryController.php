@@ -66,6 +66,7 @@ class CategoryController extends Controller
     function category_destroy($id){
         
         $row = Category::find($id);
+        
         $row->delete();
         
         $category = Category::all();
