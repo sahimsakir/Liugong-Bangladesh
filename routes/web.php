@@ -57,6 +57,7 @@ Route::group(['middleware'=>['AuthCheck']], function(){
     Route::post('/product-update/{id}', [ProductController::class,'product_modify']);
     Route::post('/product-delete/{id}', [ProductController::class,'product_destroy']);
 
+
     Route::get('/category-list', [CategoryController::class,'category_list'])->name('admin.category-list');
     Route::get('/category-add', [CategoryController::class,'category_add']);
     Route::post('/category-add', [CategoryController::class, 'new_category'])->name('category.upload');
