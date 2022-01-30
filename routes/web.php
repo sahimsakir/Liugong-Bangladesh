@@ -39,6 +39,10 @@ Route::get('/career', function () {
 Route::post('/register', [AuthController::class, 'new_registration'])->name('auth.register');
 Route::post('/check', [AuthController::class, 'check'])->name('auth.check');
 Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/forget-password', [AuthController::class, 'forget_password']);
+Route::post('/forget-password', [AuthController::class, 'password_link'])->name('auth.password_link');
+Route::get('/reset-password/{token}', [AuthController::class, 'reset_password'])->name('auth.reset_password');
+Route::post('/reset-password', [AuthController::class, 'renew_password'])->name('auth.renew_password');
 
 Route::get('/', [HomeController::class,'index']);
 Route::get('/products/{id}', [HomeController::class, 'product_by_category']);

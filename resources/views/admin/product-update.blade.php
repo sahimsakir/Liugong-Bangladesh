@@ -120,6 +120,9 @@
                                                         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="inputCategory">
                                                             <option value="{{$i->category_id}}" selected>{{$i->category_name}}</option>
                                                             @foreach ($category as $j)
+                                                            @if($i->category_id==$j->id)
+                                                            @continue
+                                                            @endif
                                                             <option value="{{$j->category_id}}">{{$j->category_name}}</option>
                                                             @endforeach
                                                         </select>
