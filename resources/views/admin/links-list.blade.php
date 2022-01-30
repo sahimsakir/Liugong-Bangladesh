@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - LiuGong Bangladesh Admin</title>
+        <title>Links List - LiuGong Bangladesh Admin</title>
         <link rel="shortcut icon" href="{{asset('assets/images/liugong-logo-title.png')}}" type="image/png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="{{asset('admin/css/styles.css')}}" rel="stylesheet" />
@@ -14,9 +14,9 @@
     </head>
     <body class="sb-nav-fixed">
         
-        @extends('admin.include-navbar')
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
+    @extends('admin.include-navbar')
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
@@ -95,12 +95,80 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
+                    
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <div class="alert-box">
+                            @if(Session::get('success'))
+                                <div class="alert alert-success mt-3">
+                                    {{ Session::get('success') }}
+                                </div>
+                                
+                            @endif
+
+                            @if(Session::get('fail'))
+                                <div class="alert alert-danger mt-3">
+                                    {{ Session::get('fail') }}
+                                </div>
+                            @endif
+                        </div>
+                        <h1 class="mt-4">Links List</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Links List</li>
                         </ol>
                         
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <div class="row mb-3">
+                                    <div class="col-md-6 left-button">
+                                        <i class="fas fa-table me-1"></i>
+                                    Users
+                                    </div>
+                                    <div class="col-md-6 right-button">
+                                        <a href="/link-add"><i class="fa fa-plus"></i></a>
+                                        <!--<button class="btn-save">Save</button>--> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Link</th>
+                                            <th>Icon</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Link</th>
+                                            <th>Icon</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        @foreach ($link as $i)
+                                        <tr>
+                                            <td>{{$i->link_name}}</td>
+                                            <td>{{$i->link_link}}</td>
+                                            <td>{!! $i->link_icon !!}</td>
+                                            <td>{{$i->link_status}}</td>
+                                            <td><form action="/link-delete/{{$i->id}}" method="post" onsubmit="return confirm('Are you sure?');">
+                                            @csrf
+                                                <a href="/link-update/{{$i->id}}"><i class="fas fa-edit"></i></a>
+                                                <button class="btn btn-link btn-sm"><i class="fas fa-trash-alt"></i></button></td>
+                                            </form> 
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

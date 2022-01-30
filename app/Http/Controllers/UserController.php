@@ -13,7 +13,7 @@ class UserController extends Controller
     function user_list()
     {
         $data = ['LoggedUserInfo'=>User::where('id','=', session('LoggedUser'))->first()];
-        $user = $user = User::where('status','!=','Pending')->get();
+        $user = User::where('status','!=','Pending')->get();
         return view('admin.user-list', $data,['user'=>$user]);
         
     }

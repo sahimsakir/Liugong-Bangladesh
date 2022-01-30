@@ -21,7 +21,11 @@
                                 <div class="text-center mt-4">
                                     <img class="mb-4 img-error" src="{{asset('admin/assets/img/error-404-monochrome.svg')}}" />
                                     <p class="lead">This requested URL was not found on this server.</p>
-                                    <a href="/dashboard">
+                                    <a href="/" class="m-2">
+                                        <i class="fas fa-arrow-left me-1"></i>
+                                        Return to HomePage
+                                    </a>
+                                    <a href="/dashboard" class="m-2">
                                         <i class="fas fa-arrow-left me-1"></i>
                                         Return to Dashboard
                                     </a>

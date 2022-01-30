@@ -6,15 +6,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - LiuGong Bangladesh Admin</title>
+        <title>Update Link - LiuGong Bangladesh Admin</title>
         <link rel="shortcut icon" href="{{asset('assets/images/liugong-logo-title.png')}}" type="image/png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="{{asset('admin/css/styles.css')}}" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
     </head>
     <body class="sb-nav-fixed">
         
-        @extends('admin.include-navbar')
+    @extends('admin.include-navbar')
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
@@ -95,12 +97,73 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-11">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                @if(Session::get('success'))
+                                    <div class="alert alert-success mt-3">
+                                        {{ Session::get('success') }}
+                                    </div>
+                                @endif
+
+                                @if(Session::get('fail'))
+                                    <div class="alert alert-danger mt-3">
+                                        {{ Session::get('fail') }}
+                                    </div>
+                                @endif
+                                    <div class="card-body">
+                                    <form method="post" enctype="multipart/form-data">
+                                            @csrf
+                                            @foreach ($link as $i)
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <h6>Name</h6>
+                                                        <input class="form-control" id="inputName" name="inputName" type="text" value="{{$i->link_name}}"/>
+                                                        <span style="color:red;">@error('inputName'){{$message}} @enderror</span> 
+                                                    </div>
+                                                    
+                                                </div>
+                                                
+                                                <div class="col-md-6">
+                                                        <h6>Status</h6>
+                                                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="inputStatus">
+                                                            <option value="{{$i->link_status}}" selected>{{$i->link_status}}</option>
+                                                            <option value="Active">Active</option>
+                                                            <option value="Pending">Pending</option>
+                                                            <option value="Disable">Disable</option>
+                                                        </select>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <div class="row mb-3">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <h6>Link</h6>
+                                                        <input class="form-control" id="inputLink" name="inputLink" type="text" value="{{$i->link_link}}"/> 
+                                                        <span style="color:red;">@error('inputLink'){{$message}} @enderror</span>
+                                                    </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <h6>Icon</h6>
+                                                        <input class="form-control" id="inputIcon" name="inputIcon" type="text" value="{{$i->link_icon}}"/> 
+                                                        <span style="color:red;">@error('inputIcon'){{$message}} @enderror</span>
+                                                    </div>
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid mb-2"><button class="btn btn-primary btn-block">Save</button></div>
+                                                <div class="d-grid mb-2"><a class="btn btn-primary btn-block" href="/links-list">Back</a></div>
+                                            </div>
+                                            @endforeach
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
@@ -111,6 +174,9 @@
                 </footer>
             </div>
         </div>
+            <script>
+                    CKEDITOR.replace( 'inputDescription' );
+            </script>
         @extends('admin.include-footer-js')
     </body>
 </html>
