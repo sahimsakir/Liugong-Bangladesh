@@ -51,13 +51,13 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="#">Home</a>
-                                            <a class="nav-link" href="#">About Us</a>
-                                            <a class="nav-link" href="#">Our Products</a>
-                                            <a class="nav-link" href="#">Contact Us</a>
-                                            <a class="nav-link" href="#">Career</a>
-                                            <a class="nav-link" href="#">Other Pages</a>
-                                            <a class="nav-link" href="#">Add new Page</a>
+                                            <a class="nav-link" href="/edit-home">Home</a>
+                                            <a class="nav-link" href="/edit-about">About Us</a>
+                                            <a class="nav-link" href="/edit-products">Our Products</a>
+                                            <a class="nav-link" href="/edit-contact">Contact Us</a>
+                                            <a class="nav-link" href="/edit-career">Career</a>
+                                            <a class="nav-link" href="/edit-other">Other Pages</a>
+                                            <a class="nav-link" href="/add-page">Add new Page</a>
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">

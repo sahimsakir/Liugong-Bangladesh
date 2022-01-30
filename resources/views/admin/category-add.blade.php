@@ -52,13 +52,13 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="home-edit.html">Home</a>
-                                            <a class="nav-link" href="about-us-edit.html">About Us</a>
-                                            <a class="nav-link" href="our-products-edit.html">Our Products</a>
-                                            <a class="nav-link" href="contact-us-edit.html">Contact Us</a>
-                                            <a class="nav-link" href="career-edit.html">Career</a>
-                                            <a class="nav-link" href="other-pages-edit.html">Other Pages</a>
-                                            <a class="nav-link" href="add-new-page-edit.html">Add new Page</a>
+                                            <a class="nav-link" href="/edit-home">Home</a>
+                                            <a class="nav-link" href="/edit-about">About Us</a>
+                                            <a class="nav-link" href="/edit-products">Our Products</a>
+                                            <a class="nav-link" href="/edit-contact">Contact Us</a>
+                                            <a class="nav-link" href="/edit-career">Career</a>
+                                            <a class="nav-link" href="/edit-other">Other Pages</a>
+                                            <a class="nav-link" href="/add-page">Add new Page</a>
                                         </nav>
                                     </div>
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
@@ -67,13 +67,13 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="product-list.html">Products</a>
-                                            <a class="nav-link" href="category-list.html">Categories</a>
-                                            <a class="nav-link" href="links-list.html">Socail Links</a>
-                                            <a class="nav-link" href="team-list.html">Team Member</a>
-                                            <a class="nav-link" href="happy-client-list.html">Happy Client</a>
-                                            <a class="nav-link" href="major-client-list.html">Major Client</a>
-                                            <a class="nav-link" href="jobs-list.html">Jobs</a>
+                                            <a class="nav-link" href="/product-list">Products</a>
+                                            <a class="nav-link" href="/category-list">Categories</a>
+                                            <a class="nav-link" href="/links-list">Socail Links</a>
+                                            <a class="nav-link" href="/team-list">Team Member</a>
+                                            <a class="nav-link" href="/happy-client-list">Happy Client</a>
+                                            <a class="nav-link" href="/major-client-list">Major Client</a>
+                                            <a class="nav-link" href="/jobs-list">Jobs</a>
                                         </nav>
                                     </div>
                                 </nav>

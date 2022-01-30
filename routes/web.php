@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LinkController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,4 +84,11 @@ Route::group(['middleware'=>['AuthCheck']], function(){
     Route::post('/profile/{id}', [AdminController::class,'profile_modify']);
     Route::get('/change-password', [AdminController::class,'change_password'])->name('admin.change-password');
     Route::post('/change-password/{id}', [AdminController::class,'change_password_modify']);
+
+    Route::get('/links-list', [LinkController::class,'links_list'])->name('admin.links-list');
+    Route::get('/link-add', [LinkController::class,'link_add']);
+    Route::post('/link-add', [LinkController::class, 'new_link'])->name('link.upload');
+    Route::get('/link-update/{id}', [LinkController::class,'link_update']);
+    Route::post('/link-update/{id}', [LinkController::class,'link_modify']);
+    Route::post('/link-delete/{id}', [LinkController::class,'link_destroy']);
 });
