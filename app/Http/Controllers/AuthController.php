@@ -7,7 +7,8 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
 use Cookie;
-
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 class AuthController extends Controller
 {
     
@@ -23,11 +24,66 @@ class AuthController extends Controller
         return view ('auth.register');
         
     }
-    function password()
+    function forget_password()
     {
         
-        return view ('auth.password');
+        return view ('auth.forget-password');
         
+    }
+    function password_link(Request $request)
+    {
+        $request->validate([
+            'email'=> 'required|email|exists:users,email',
+        ]);
+
+        $token = Str::random(64);
+
+        \DB::table('password_resets')->insert([
+            'email'=>$request->email,
+            'token'=>$token,
+            'created_at'=>Carbon::now(),
+      ]);
+      $action_link = route('auth.reset_password',['token'=>$token,'email'=>$request->email]);
+           $body = "We have received a request to reset the password for <b>Liugong Bangladesh</b> account associated with ".$request->email.". You can reset your password by clicking the link below.";
+
+           \Mail::send('auth.email-forgot',['action_link'=>$action_link,'body'=>$body], function($message) use ($request){
+                $message->from('admin@liugongbangladesh.com', 'Admin - Liugong');
+                $message->to($request->email, 'User')
+                        ->subject('Reset Password');
+           });
+
+           return back()->with('success', 'We have e-mailed your password reset link');
+    }
+
+    public function reset_password(Request $request, $token = null){
+        return view('auth.reset-password')->with(['token'=>$token,'email'=>$request->email]);
+
+    }
+    public function renew_password(Request $request){
+        $request->validate([            
+            'inputPassword' => 'required|min:3|max:30',
+            'inputPasswordConfirm' => 'required|min:3|max:30',            
+
+        ]);
+
+        $users = User::where('email','=',$request->email)->first();
+            if($request->input('inputPassword')==$request->input('inputPasswordConfirm')){
+                $users->password = $request->input('inputPassword');
+                $users->save();
+            }
+            else{
+                return back()->with('fail','Password Do not Match');
+            }
+
+        
+
+
+        if($users->save()){
+            
+            return back()->with('success','Password Updated');
+        }
+        // return view('auth.reset-password')->with(['token'=>$token,'email'=>$request->email]);
+
     }
 
     public function new_registration(Request $request)
@@ -47,11 +103,7 @@ class AuthController extends Controller
             $user->email = $request->input('email');
             $user->password = $request->input('inputPassword');
             $user->status = 'Pending';
-            // $user->user_features = $request->input('inputFeatures');
-            // $user->user_parameters = $request->input('inputParameters');
-            // $user->user_image = $uploadImage;
-            // $user->user_catalog = $uploadCatalog;
-            // $user->user_class = $cat->category_class;
+
             $user->save();
         }
         else{

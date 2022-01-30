@@ -19,7 +19,7 @@ class ProductController extends Controller
         
     }
 
-    function product_list()
+    function  product_list()
     {
         $products = Product::join('categories','categories.id','=','products.category_id')->get(['products.id','products.product_name','products.product_image','products.product_catalog','categories.category_name']);
         
