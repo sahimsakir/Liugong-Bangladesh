@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
-use App\Models\link;
+use App\Models\Link;
 
 class LinkController extends Controller
 {
@@ -94,14 +94,15 @@ class LinkController extends Controller
     function link_destroy($id){
         
         $row = Link::find($id);
-        if($row->id==1)
-        {
-            return back()->with('fail','Main Admin Can not be Deleted');
-        }
-        else{
+
+        if($row){
             $row->delete();
             return back()->with('success','"'.$row->link_name.'" Has been Succesfully Deleted');
         }
+        else{
+            return back()->with('fail','Something went wrong');
+        }    
+
 
         
     }

@@ -103,16 +103,16 @@ class CategoryController extends Controller
         $category->category_meta_key = $request->input('inputMetaKeyword');
         if($request->file('inputBanner')){
             $inputBanner = time().'.'.$request->file('inputBanner')->extension();  
-            $request->file('inputBanner')->move(public_path('uploads'), $inputBanner);
-            $uploadBanner = 'uploads/'.$inputBanner;
+            $request->file('inputBanner')->move(public_path('assets/images/banner'), $inputBanner);
+            $uploadBanner = 'assets/images/banner/'.$inputBanner;
         }
         else{
             $uploadBanner = $category->category_banner;
         }
         if($request->file('inputImage')){
             $inputImage = time().'.'.$request->file('inputImage')->extension();  
-            $request->file('inputImage')->move(public_path('uploads'), $inputImage);
-            $uploadImage = 'uploads/'.$inputImage;
+            $request->file('inputImage')->move(public_path('assets/images/category'), $inputImage);
+            $uploadImage = 'assets/images/category/'.$inputImage;
         }
         else{
             $uploadImage = $category->category_image;
