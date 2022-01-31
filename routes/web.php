@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,4 +92,11 @@ Route::group(['middleware'=>['AuthCheck']], function(){
     Route::get('/link-update/{id}', [LinkController::class,'link_update']);
     Route::post('/link-update/{id}', [LinkController::class,'link_modify']);
     Route::post('/link-delete/{id}', [LinkController::class,'link_destroy']);
+
+    Route::get('/team-list', [MemberController::class,'team_list'])->name('admin.team-list');
+    Route::get('/team-add', [MemberController::class,'team_add']);
+    Route::post('/team-add', [MemberController::class, 'new_team'])->name('team.upload');
+    Route::get('/team-update/{id}', [MemberController::class,'team_update']);
+    Route::post('/team-update/{id}', [MemberController::class,'team_modify']);
+    Route::post('/team-delete/{id}', [MemberController::class,'team_destroy']);
 });

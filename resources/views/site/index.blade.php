@@ -157,8 +157,9 @@
             <div class="inner-content">
                 <h3>Our <em>Social</em> Links</h3>
                 <div class="links">
-                  <a href="https://www.facebook.com/liugongbm"><i class="fab fa-facebook"></i></a>
-                  <a href="https://www.youtube.com/channel/UCOllrXwMeJ1iPb8KrlEzjrQ"><i class="fab fa-youtube"></i></a>
+                  @foreach($link as $i)
+                  <a href="{{$i->link_link}}">{!!$i->link_icon!!}</a>
+                  @endforeach
                 </div>
                 
             </div>
